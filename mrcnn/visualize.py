@@ -513,7 +513,7 @@ def save_image(image, image_name, boxes, masks, class_ids, scores, class_names, 
     masked_image = Image.fromarray(masked_image)
 
     if mode == 3:
-        masked_image.save(os.path.join(save_dir, '%s.jpg' % (image_name)))
+        masked_image.save(os.path.join(save_dir, '%s' % (image_name)))
         return
 
     draw = ImageDraw.Draw(masked_image)
@@ -533,4 +533,4 @@ def save_image(image, image_name, boxes, masks, class_ids, scores, class_names, 
         font = ImageFont.truetype('/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf', 15)
         draw.text((x1, y1), "%s %f" % (label, score), (255, 255, 255), font)
 
-    masked_image.save(os.path.join(save_dir, '%s.jpg' % (image_name)))
+    masked_image.save(os.path.join(save_dir, '%s' % (image_name)))

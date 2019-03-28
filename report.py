@@ -6,7 +6,7 @@ pdf.add_page()
 pdf.set_font('Arial', 'B', 36)
 pdf.set_y(90)
 pdf.set_x(50)
-pdf.cell(100, 20, 'CAR DAMAGE REPORT', 1, 0, 'C')
+pdf.cell(150, 20, 'CAR DAMAGE REPORT', 1, 0, 'C')
 pdf.set_y(170)
 pdf.set_x(170)
 pdf.set_font('Arial', 'B', 16)
@@ -15,8 +15,7 @@ pdf.cell(10, 20, 'Tanuja K', 0, 2, 'R')
 pdf.add_page()
 pdf.write(5, 'The scratch detected at \n ')
 for name in os.listdir('output'):
-		if name.endswith("jpg"):
-			filename='output/'+name
-			pdf.image(filename, x = 10, y = 90, w=150, h=84)
-pdf.cell(100, 20, 'No scratch detected in this car', 0, 2, 'R')
+	if name.endswith("jpg"):
+		filename='output/'+name
+		pdf.image(filename, x = 10, y = 90, w=150, h=84)
 pdf.output('report.pdf', 'F')
